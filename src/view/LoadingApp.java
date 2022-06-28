@@ -5,8 +5,7 @@
 package view;
 
 /**
- * SplashScreen képernyő betöltését szolgáló osztály
- *
+ * Splash screen betöltését szolgáló osztály
  * @author Márta Krisztián
  * @since 2022-06-28
  * @version 1.0
@@ -25,6 +24,7 @@ public class LoadingApp {
                 }
             }
         } catch (Exception e) {
+            System.out.println("Hiba a splash screen betöltésekor!");
         }
     }
 }
