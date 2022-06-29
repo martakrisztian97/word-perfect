@@ -39,38 +39,48 @@ public class SplashScreen extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        wordPerfectLabel = new javax.swing.JLabel();
+        loadingGIFLabel = new javax.swing.JLabel();
+        percentLabel = new javax.swing.JLabel();
+        loadTextLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Word-pressed");
         setUndecorated(true);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setFont(new java.awt.Font("Agency FB", 1, 48)); // NOI18N
-        jLabel1.setText("WORD-PERFECT");
+        wordPerfectLabel.setFont(new java.awt.Font("Agency FB", 1, 48)); // NOI18N
+        wordPerfectLabel.setText("WORD-PERFECT");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 150, 0);
-        getContentPane().add(jLabel1, gridBagConstraints);
+        getContentPane().add(wordPerfectLabel, gridBagConstraints);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/loading.gif"))); // NOI18N
+        loadingGIFLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/loading.gif"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 3;
-        getContentPane().add(jLabel2, gridBagConstraints);
+        getContentPane().add(loadingGIFLabel, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
-        jLabel3.setText("0%");
+        percentLabel.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        percentLabel.setText("0%");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        getContentPane().add(percentLabel, gridBagConstraints);
+
+        loadTextLabel.setText("Angol szavak betöltése...");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.insets = new java.awt.Insets(150, 0, 0, 0);
-        getContentPane().add(jLabel3, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(140, 0, 0, 0);
+        getContentPane().add(loadTextLabel, gridBagConstraints);
 
         setSize(new java.awt.Dimension(800, 800));
         setLocationRelativeTo(null);
@@ -113,8 +123,9 @@ public class SplashScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel loadTextLabel;
+    private javax.swing.JLabel loadingGIFLabel;
+    public javax.swing.JLabel percentLabel;
+    private javax.swing.JLabel wordPerfectLabel;
     // End of variables declaration//GEN-END:variables
 }

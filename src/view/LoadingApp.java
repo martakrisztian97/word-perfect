@@ -18,10 +18,9 @@ public class LoadingApp {
         try {
             for (int i = 0; i <= 100; i++) {
                 Thread.sleep(40);
-                s.jLabel3.setText(Integer.toString(i)+"%");
-                if (i == 100) {
-                    s.dispose();
-                }
+                s.percentLabel.setText(Integer.toString(i)+"%");
+                if (i == 50) s.loadTextLabel.setText("Magyar szavak betöltése...");
+                if (i == 100) s.dispose();
             }
         } catch (Exception e) {
             System.out.println("Hiba a splash screen betöltésekor!");
