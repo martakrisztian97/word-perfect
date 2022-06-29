@@ -7,7 +7,7 @@ package view;
 import java.awt.Color;
 
 /**
- * Splash screen GUI
+ * Splash screen
  * @author Márta Krisztián
  * @since 2022-06-28
  * @version 1.0
@@ -46,7 +46,10 @@ public class SplashScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Word-pressed");
+        setMinimumSize(new java.awt.Dimension(800, 800));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(800, 800));
+        setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         wordPerfectLabel.setFont(new java.awt.Font("Agency FB", 1, 48)); // NOI18N

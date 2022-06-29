@@ -5,7 +5,7 @@
 package view;
 
 /**
- * Splash screen betöltését szolgáló osztály
+ * Alkalmazás indítása
  * @author Márta Krisztián
  * @since 2022-06-28
  * @version 1.0
