@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Alkalmazás kezdő képernyője
+ * A szavak tárolására szolgáló osztály
  * @author Márta Krisztián
  * @since 2022-06-30
  * @version 1.0
