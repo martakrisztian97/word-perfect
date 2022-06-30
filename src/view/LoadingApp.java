@@ -15,7 +15,7 @@ public class LoadingApp {
     public static void main(String[] args) {
         SplashScreen s = new SplashScreen();
         s.setVisible(true);
-        Home h = new Home();
+        HomeJFrame h = new HomeJFrame();
         try {
             for (int i = 0; i <= 100; i++) {
                 Thread.sleep(40);
