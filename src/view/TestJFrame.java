@@ -121,6 +121,10 @@ public class TestJFrame extends javax.swing.JFrame {
         quitButton.setCursor(c);
     }//GEN-LAST:event_quitButtonMouseMoved
 
+    /**
+     * Kurzor beállítása, ha az egeret az elem felé húzzuk
+     * @param evt 
+     */
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_quitButtonActionPerformed
