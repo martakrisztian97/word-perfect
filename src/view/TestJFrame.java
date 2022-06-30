@@ -4,9 +4,16 @@
  */
 package view;
 
+import java.awt.Toolkit;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Cursor;
+
 /**
- *
- * @author marta
+ * Teszt feladatsor képernyője
+ * @author Márta Krisztián
+ * @since 2022-06-30
+ * @version 1.0
  */
 public class TestJFrame extends javax.swing.JFrame {
 
@@ -15,6 +22,14 @@ public class TestJFrame extends javax.swing.JFrame {
      */
     public TestJFrame() {
         initComponents();
+        setJFrameBackground();
+    }
+    
+    /**
+     * JFrame hátterének beállítása
+     */
+    public void setJFrameBackground() {
+        getContentPane().setBackground(new java.awt.Color(177, 184, 252));
     }
 
     /**
@@ -25,22 +40,90 @@ public class TestJFrame extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
+
+        termLabel = new javax.swing.JLabel();
+        definitionTextField = new javax.swing.JTextField();
+        nextButton = new javax.swing.JButton();
+        quitButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("WORD-PERFECT");
+        setUndecorated(true);
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        termLabel.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        termLabel.setText("Term");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 50, 0);
+        getContentPane().add(termLabel, gridBagConstraints);
 
-        pack();
+        definitionTextField.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        definitionTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        definitionTextField.setPreferredSize(new java.awt.Dimension(200, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 441;
+        gridBagConstraints.ipady = 28;
+        gridBagConstraints.insets = new java.awt.Insets(50, 0, 50, 0);
+        getContentPane().add(definitionTextField, gridBagConstraints);
+
+        nextButton.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        nextButton.setText("Következő");
+        nextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        nextButton.setFocusable(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.insets = new java.awt.Insets(50, 0, 50, 0);
+        getContentPane().add(nextButton, gridBagConstraints);
+
+        quitButton.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
+        quitButton.setForeground(new java.awt.Color(255, 0, 0));
+        quitButton.setText("Kilépés");
+        quitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        quitButton.setFocusable(false);
+        quitButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                quitButtonMouseMoved(evt);
+            }
+        });
+        quitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitButtonActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.insets = new java.awt.Insets(150, 0, 0, 0);
+        getContentPane().add(quitButton, gridBagConstraints);
+
+        setSize(new java.awt.Dimension(800, 800));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    /**
+     * Gombra kattintva bezárja az alkalmazást
+     * @param evt 
+     */
+    private void quitButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quitButtonMouseMoved
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Image image = toolkit.getImage("src/view/images/quit_cursor.png");
+        Point p = new Point(0, 0);
+        Cursor c = toolkit.createCustomCursor(image, p, "quit");
+        quitButton.setCursor(c);
+    }//GEN-LAST:event_quitButtonMouseMoved
+
+    private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_quitButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +161,9 @@ public class TestJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField definitionTextField;
+    private javax.swing.JButton nextButton;
+    private javax.swing.JButton quitButton;
+    private javax.swing.JLabel termLabel;
     // End of variables declaration//GEN-END:variables
 }

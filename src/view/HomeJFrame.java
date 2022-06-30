@@ -8,8 +8,11 @@ import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Toolkit;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Cursor;
+
 
 /**
  * Alkalmazás kezdő képernyője
@@ -73,7 +76,7 @@ public class HomeJFrame extends javax.swing.JFrame {
         quitMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Word-pressed");
+        setTitle("WORD-PERFECT");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFocusCycleRoot(false);
         setMinimumSize(new java.awt.Dimension(800, 800));
@@ -139,7 +142,7 @@ public class HomeJFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(25, 0, 25, 10);
+        gridBagConstraints.insets = new java.awt.Insets(25, 25, 25, 12);
         getContentPane().add(englishRadioButton, gridBagConstraints);
 
         languageButtonGroup.add(hungarianRadioButton);
@@ -153,7 +156,7 @@ public class HomeJFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(25, 10, 25, 0);
+        gridBagConstraints.insets = new java.awt.Insets(25, 0, 25, 0);
         getContentPane().add(hungarianRadioButton, gridBagConstraints);
 
         menu1.setText("Menü");
@@ -255,6 +258,36 @@ public class HomeJFrame extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(HomeJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
