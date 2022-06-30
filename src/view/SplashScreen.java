@@ -46,6 +46,7 @@ public class SplashScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Word-pressed");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
         setMinimumSize(new java.awt.Dimension(800, 800));
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(800, 800));
