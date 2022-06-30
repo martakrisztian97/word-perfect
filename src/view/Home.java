@@ -8,6 +8,8 @@ import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Alkalmazás kezdő képernyője
@@ -65,10 +67,10 @@ public class Home extends javax.swing.JFrame {
         testStartButton = new javax.swing.JButton();
         englishRadioButton = new javax.swing.JRadioButton();
         hungarianRadioButton = new javax.swing.JRadioButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        menuBar = new javax.swing.JMenuBar();
+        menu1 = new javax.swing.JMenu();
+        testStartMenuItem = new javax.swing.JMenuItem();
+        quitMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Word-pressed");
@@ -82,8 +84,13 @@ public class Home extends javax.swing.JFrame {
         quitButton.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
         quitButton.setForeground(new java.awt.Color(255, 0, 0));
         quitButton.setText("Kilépés");
-        quitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        quitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         quitButton.setFocusable(false);
+        quitButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                quitButtonMouseMoved(evt);
+            }
+        });
         quitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quitButtonActionPerformed(evt);
@@ -124,6 +131,11 @@ public class Home extends javax.swing.JFrame {
         englishRadioButton.setSelected(true);
         englishRadioButton.setText("Angol");
         englishRadioButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        englishRadioButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                englishRadioButtonMouseMoved(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -133,22 +145,34 @@ public class Home extends javax.swing.JFrame {
         languageButtonGroup.add(hungarianRadioButton);
         hungarianRadioButton.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         hungarianRadioButton.setText("Magyar");
+        hungarianRadioButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                hungarianRadioButtonMouseMoved(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.insets = new java.awt.Insets(25, 10, 25, 0);
         getContentPane().add(hungarianRadioButton, gridBagConstraints);
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        menu1.setText("Menü");
+        menu1.setToolTipText("");
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        testStartMenuItem.setText("Teszt indítása");
+        menu1.add(testStartMenuItem);
 
-        jMenu3.setText("jMenu3");
-        jMenuBar1.add(jMenu3);
+        quitMenuItem.setText("Kilépés");
+        quitMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitMenuItemActionPerformed(evt);
+            }
+        });
+        menu1.add(quitMenuItem);
 
-        setJMenuBar(jMenuBar1);
+        menuBar.add(menu1);
+
+        setJMenuBar(menuBar);
 
         setSize(new java.awt.Dimension(800, 800));
         setLocationRelativeTo(null);
@@ -161,6 +185,50 @@ public class Home extends javax.swing.JFrame {
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_quitButtonActionPerformed
+
+    /**
+     * Gombra kattintva bezárja az alkalmazást
+     * @param evt 
+     */
+    private void quitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitMenuItemActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_quitMenuItemActionPerformed
+
+    /**
+     * Kurzor beállítása, ha az egeret az elem felé húzzuk
+     * @param evt 
+     */
+    private void englishRadioButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_englishRadioButtonMouseMoved
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Image image = toolkit.getImage("src/view/images/uk_cursor.png");
+        Point p = new Point(0, 0);
+        Cursor c = toolkit.createCustomCursor(image, p, "uk");
+        englishRadioButton.setCursor(c);
+    }//GEN-LAST:event_englishRadioButtonMouseMoved
+
+    /**
+     * Kurzor beállítása, ha az egeret az elem felé húzzuk
+     * @param evt 
+     */
+    private void hungarianRadioButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hungarianRadioButtonMouseMoved
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Image image = toolkit.getImage("src/view/images/hu_cursor.png");
+        Point p = new Point(0, 0);
+        Cursor c = toolkit.createCustomCursor(image, p, "hu");
+        hungarianRadioButton.setCursor(c);
+    }//GEN-LAST:event_hungarianRadioButtonMouseMoved
+
+    /**
+     * Kurzor beállítása, ha az egeret az elem felé húzzuk
+     * @param evt 
+     */
+    private void quitButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quitButtonMouseMoved
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Image image = toolkit.getImage("src/view/images/quit_cursor.png");
+        Point p = new Point(0, 0);
+        Cursor c = toolkit.createCustomCursor(image, p, "quit");
+        quitButton.setCursor(c);
+    }//GEN-LAST:event_quitButtonMouseMoved
 
     /**
      * @param args the command line arguments
@@ -200,13 +268,13 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton englishRadioButton;
     private javax.swing.JRadioButton hungarianRadioButton;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.ButtonGroup languageButtonGroup;
+    private javax.swing.JMenu menu1;
+    private javax.swing.JMenuBar menuBar;
     private javax.swing.JButton quitButton;
+    private javax.swing.JMenuItem quitMenuItem;
     private javax.swing.JButton testStartButton;
+    private javax.swing.JMenuItem testStartMenuItem;
     private javax.swing.JSpinner wordsNumberSpinner;
     // End of variables declaration//GEN-END:variables
 }
