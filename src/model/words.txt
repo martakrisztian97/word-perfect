@@ -1,0 +1,44 @@
+accept;elfogad
+access;hozzáfér, elér
+assert;állít, bizonygat
+assess;felbecsül, értékel, megállapít
+adapt to;alkalmazkodni valamihez
+affect;befolyásol, hatást gyakorol
+crime;bűn, bűntény
+compact;tömör, rövid
+complain;panaszkodni
+conform to;alkalmazkodni valamihez
+deteriorate;romlik
+deteriorated;megromlott, romlott
+exhausting;kimerítő, fárasztó
+exhilarating;felvidító, szórakoztató
+exonerated;felmentett, felszabadított
+exonerate;felszabadít
+experience;élmény, tapasztalat
+experienced;tapasztalt
+flexible;rugalmas
+immature;éretlen
+mature;érett
+live up to something;felérni valamihez, valamihez méltónak lenni
+material;anyag
+optional;választható, nem kötelező
+obligatory;kötelező
+remnant;rom, maradvány
+reptile;hüllő
+rescue;megment
+responsibility;felelősség
+sacrifice;áldoz, feláldoz
+sadden;elszomorít, szomorít
+satisfy;elégedetté tesz, valaminek eleget tesz
+sparkle;fénylik, szikrázik
+stroppy;ideges
+sudden;hirtelen
+superb;csodálatos, fantasztikus
+superstitious;babonás
+success;siker, valami sikerül
+sue;beperel
+supply;jóvátesz, pótol, ellát valakit/valamit valamivel
+surpass;túlhalad, átlép
+uneasy;kellemetlen
+unnecessary;szükségtelen
+suspicious;gyanús, gyanakvó
