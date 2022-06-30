@@ -59,9 +59,12 @@ public class Home extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        languageButtonGroup = new javax.swing.ButtonGroup();
         quitButton = new javax.swing.JButton();
         wordsNumberSpinner = new javax.swing.JSpinner();
         testStartButton = new javax.swing.JButton();
+        englishRadioButton = new javax.swing.JRadioButton();
+        hungarianRadioButton = new javax.swing.JRadioButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -81,10 +84,16 @@ public class Home extends javax.swing.JFrame {
         quitButton.setText("Kilépés");
         quitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         quitButton.setFocusable(false);
+        quitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitButtonActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.insets = new java.awt.Insets(50, 0, 0, 0);
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.insets = new java.awt.Insets(25, 0, 0, 0);
         getContentPane().add(quitButton, gridBagConstraints);
 
         wordsNumberSpinner.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
@@ -95,6 +104,8 @@ public class Home extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 25, 0);
         getContentPane().add(wordsNumberSpinner, gridBagConstraints);
 
         testStartButton.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
@@ -103,9 +114,30 @@ public class Home extends javax.swing.JFrame {
         testStartButton.setFocusable(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(100, 0, 0, 0);
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.insets = new java.awt.Insets(25, 0, 25, 0);
         getContentPane().add(testStartButton, gridBagConstraints);
+
+        languageButtonGroup.add(englishRadioButton);
+        englishRadioButton.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
+        englishRadioButton.setSelected(true);
+        englishRadioButton.setText("Angol");
+        englishRadioButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(25, 0, 25, 10);
+        getContentPane().add(englishRadioButton, gridBagConstraints);
+
+        languageButtonGroup.add(hungarianRadioButton);
+        hungarianRadioButton.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
+        hungarianRadioButton.setText("Magyar");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(25, 10, 25, 0);
+        getContentPane().add(hungarianRadioButton, gridBagConstraints);
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -121,6 +153,14 @@ public class Home extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(800, 800));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    /**
+     * Gombra kattintva bezárja az alkalmazást
+     * @param evt 
+     */
+    private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_quitButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,10 +198,13 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton englishRadioButton;
+    private javax.swing.JRadioButton hungarianRadioButton;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.ButtonGroup languageButtonGroup;
     private javax.swing.JButton quitButton;
     private javax.swing.JButton testStartButton;
     private javax.swing.JSpinner wordsNumberSpinner;
