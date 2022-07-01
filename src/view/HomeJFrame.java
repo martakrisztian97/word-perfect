@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Color;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerModel;
@@ -47,6 +48,7 @@ public class HomeJFrame extends javax.swing.JFrame {
            JSpinner.DefaultEditor editor = (JSpinner.DefaultEditor) wordsNumberSpinner.getEditor();
            editor.getTextField().setEditable(false);
            editor.getTextField().setHorizontalAlignment(JTextField.CENTER);
+           editor.getTextField().setBackground(Color.WHITE);
         }
     }
 
@@ -74,7 +76,6 @@ public class HomeJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("WORD-PERFECT");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setFocusCycleRoot(false);
         setMinimumSize(new java.awt.Dimension(800, 800));
         setUndecorated(true);
         setResizable(false);
@@ -105,6 +106,7 @@ public class HomeJFrame extends javax.swing.JFrame {
         wordsNumberSpinner.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
         wordsNumberSpinner.setModel(new javax.swing.SpinnerNumberModel(50, 50, 200, 10));
         wordsNumberSpinner.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        wordsNumberSpinner.setFocusable(false);
         wordsNumberSpinner.setMinimumSize(new java.awt.Dimension(100, 100));
         wordsNumberSpinner.setPreferredSize(new java.awt.Dimension(100, 100));
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -126,10 +128,14 @@ public class HomeJFrame extends javax.swing.JFrame {
         getContentPane().add(testStartButton, gridBagConstraints);
 
         languageButtonGroup.add(englishRadioButton);
-        englishRadioButton.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
+        englishRadioButton.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
         englishRadioButton.setSelected(true);
         englishRadioButton.setText("Angol");
+        englishRadioButton.setBorder(null);
         englishRadioButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        englishRadioButton.setFocusable(false);
+        englishRadioButton.setOpaque(false);
+        englishRadioButton.setPreferredSize(new java.awt.Dimension(93, 45));
         englishRadioButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 englishRadioButtonMouseMoved(evt);
@@ -138,12 +144,15 @@ public class HomeJFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(25, 25, 25, 12);
+        gridBagConstraints.insets = new java.awt.Insets(25, 0, 25, 5);
         getContentPane().add(englishRadioButton, gridBagConstraints);
 
         languageButtonGroup.add(hungarianRadioButton);
-        hungarianRadioButton.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
+        hungarianRadioButton.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
         hungarianRadioButton.setText("Magyar");
+        hungarianRadioButton.setBorder(null);
+        hungarianRadioButton.setFocusable(false);
+        hungarianRadioButton.setOpaque(false);
         hungarianRadioButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 hungarianRadioButtonMouseMoved(evt);
@@ -152,7 +161,7 @@ public class HomeJFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(25, 0, 25, 0);
+        gridBagConstraints.insets = new java.awt.Insets(25, 5, 25, 0);
         getContentPane().add(hungarianRadioButton, gridBagConstraints);
 
         menu1.setText("Menü");
@@ -199,7 +208,7 @@ public class HomeJFrame extends javax.swing.JFrame {
      */
     private void englishRadioButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_englishRadioButtonMouseMoved
         Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Image image = toolkit.getImage("src/view/images/uk_cursor.png");
+        Image image = toolkit.getImage(getClass().getResource("/view/images/uk_cursor.png"));
         Point p = new Point(0, 0);
         Cursor c = toolkit.createCustomCursor(image, p, "uk");
         englishRadioButton.setCursor(c);
@@ -211,7 +220,7 @@ public class HomeJFrame extends javax.swing.JFrame {
      */
     private void hungarianRadioButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hungarianRadioButtonMouseMoved
         Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Image image = toolkit.getImage("src/view/images/hu_cursor.png");
+        Image image = toolkit.getImage(getClass().getResource("/view/images/hu_cursor.png"));
         Point p = new Point(0, 0);
         Cursor c = toolkit.createCustomCursor(image, p, "hu");
         hungarianRadioButton.setCursor(c);
@@ -223,7 +232,7 @@ public class HomeJFrame extends javax.swing.JFrame {
      */
     private void quitButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quitButtonMouseMoved
         Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Image image = toolkit.getImage("src/view/images/quit_cursor.png");
+        Image image = toolkit.getImage(getClass().getResource("/view/images/quit_cursor.png"));
         Point p = new Point(0, 0);
         Cursor c = toolkit.createCustomCursor(image, p, "quit");
         quitButton.setCursor(c);
@@ -255,37 +264,6 @@ public class HomeJFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(HomeJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -305,6 +283,6 @@ public class HomeJFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem quitMenuItem;
     private javax.swing.JButton testStartButton;
     private javax.swing.JMenuItem testStartMenuItem;
-    private javax.swing.JSpinner wordsNumberSpinner;
+    public javax.swing.JSpinner wordsNumberSpinner;
     // End of variables declaration//GEN-END:variables
 }

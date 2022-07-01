@@ -19,7 +19,7 @@ public class LoadingApp {
                 if (i == 50) s.loadTextLabel.setText("Magyar szavak betöltése...");
                 if (i == 100) {
                     s.dispose();
-                    h.show();
+                    h.setVisible(true);
                 }
             }
         } catch (Exception e) {
