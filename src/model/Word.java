@@ -1,7 +1,7 @@
 package model;
 
 /**
- * A szavak tárolására szolgáló osztály
+ * Egy szó tárolására szolgáló osztály
  * @author Márta Krisztián
  * @since 2022-06-30
  * @version 1.0
@@ -21,5 +21,5 @@ public class Word {
 
     public String getHungarian() {
         return hungarian;
-    }    
+    }
 }
