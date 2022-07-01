@@ -51,6 +51,15 @@ public class HomeJFrame extends javax.swing.JFrame {
            editor.getTextField().setBackground(Color.WHITE);
         }
     }
+    
+    /**
+     * Teszt indítása
+     */
+    public void testStart() {
+        dispose();
+        LoadingWordsJFrame lw = new LoadingWordsJFrame();
+        lw.setVisible(true);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -120,6 +129,11 @@ public class HomeJFrame extends javax.swing.JFrame {
         testStartButton.setText("Teszt indítása");
         testStartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         testStartButton.setFocusable(false);
+        testStartButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                testStartButtonActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -168,6 +182,11 @@ public class HomeJFrame extends javax.swing.JFrame {
         menu1.setToolTipText("");
 
         testStartMenuItem.setText("Teszt indítása");
+        testStartMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                testStartMenuItemActionPerformed(evt);
+            }
+        });
         menu1.add(testStartMenuItem);
 
         quitMenuItem.setText("Kilépés");
@@ -187,7 +206,7 @@ public class HomeJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * Gombra kattintva bezárja az alkalmazást
+     * Kattintásra bezárja az alkalmazást
      * @param evt 
      */
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
@@ -195,7 +214,7 @@ public class HomeJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_quitButtonActionPerformed
 
     /**
-     * Gombra kattintva bezárja az alkalmazást
+     * Kattintásra bezárja az alkalmazást
      * @param evt 
      */
     private void quitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitMenuItemActionPerformed
@@ -237,6 +256,22 @@ public class HomeJFrame extends javax.swing.JFrame {
         Cursor c = toolkit.createCustomCursor(image, p, "quit");
         quitButton.setCursor(c);
     }//GEN-LAST:event_quitButtonMouseMoved
+
+    /**
+     * Kattintásra elindítja a tesztfeladatsort
+     * @param evt 
+     */
+    private void testStartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testStartButtonActionPerformed
+        testStart();
+    }//GEN-LAST:event_testStartButtonActionPerformed
+
+    /**
+     * Kattintásra elindítja a tesztfeladatsort
+     * @param evt 
+     */
+    private void testStartMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testStartMenuItemActionPerformed
+        testStart();
+    }//GEN-LAST:event_testStartMenuItemActionPerformed
 
     /**
      * @param args the command line arguments

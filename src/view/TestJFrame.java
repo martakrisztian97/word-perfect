@@ -6,7 +6,7 @@ import java.awt.Point;
 import java.awt.Cursor;
 
 /**
- * Teszt feladatsor képernyője
+ * Tesztfeladatsor képernyője
  * @author Márta Krisztián
  * @since 2022-06-30
  * @version 1.0
@@ -40,7 +40,7 @@ public class TestJFrame extends javax.swing.JFrame {
 
         termLabel = new javax.swing.JLabel();
         definitionTextField = new javax.swing.JTextField();
-        nextButton = new javax.swing.JButton();
+        answerButton = new javax.swing.JButton();
         quitButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,16 +48,16 @@ public class TestJFrame extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        termLabel.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        termLabel.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         termLabel.setText("Term");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 50, 0);
+        gridBagConstraints.insets = new java.awt.Insets(100, 0, 25, 0);
         getContentPane().add(termLabel, gridBagConstraints);
 
-        definitionTextField.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        definitionTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         definitionTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         definitionTextField.setPreferredSize(new java.awt.Dimension(200, 30));
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -65,19 +65,19 @@ public class TestJFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.ipadx = 441;
         gridBagConstraints.ipady = 28;
-        gridBagConstraints.insets = new java.awt.Insets(50, 0, 50, 0);
+        gridBagConstraints.insets = new java.awt.Insets(25, 0, 25, 0);
         getContentPane().add(definitionTextField, gridBagConstraints);
 
-        nextButton.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        nextButton.setText("Következő");
-        nextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        nextButton.setFocusable(false);
+        answerButton.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
+        answerButton.setText("Válasz");
+        answerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        answerButton.setFocusable(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.insets = new java.awt.Insets(50, 0, 50, 0);
-        getContentPane().add(nextButton, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(25, 0, 25, 0);
+        getContentPane().add(answerButton, gridBagConstraints);
 
         quitButton.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
         quitButton.setForeground(new java.awt.Color(255, 0, 0));
@@ -106,7 +106,7 @@ public class TestJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * Gombra kattintva bezárja az alkalmazást
+     * Kurzor beállítása, ha az egeret az elem felé húzzuk
      * @param evt 
      */
     private void quitButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quitButtonMouseMoved
@@ -118,7 +118,7 @@ public class TestJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_quitButtonMouseMoved
 
     /**
-     * Kurzor beállítása, ha az egeret az elem felé húzzuk
+     * Kattintásra bezárja az alkalmazást
      * @param evt 
      */
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
@@ -161,8 +161,8 @@ public class TestJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton answerButton;
     private javax.swing.JTextField definitionTextField;
-    private javax.swing.JButton nextButton;
     private javax.swing.JButton quitButton;
     private javax.swing.JLabel termLabel;
     // End of variables declaration//GEN-END:variables
