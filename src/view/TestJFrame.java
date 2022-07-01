@@ -40,8 +40,9 @@ public class TestJFrame extends javax.swing.JFrame {
 
         termLabel = new javax.swing.JLabel();
         definitionTextField = new javax.swing.JTextField();
-        answerButton = new javax.swing.JButton();
         quitButton = new javax.swing.JButton();
+        answerButton1 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("WORD-PERFECT");
@@ -53,13 +54,13 @@ public class TestJFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.insets = new java.awt.Insets(100, 0, 25, 0);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(250, 0, 25, 0);
         getContentPane().add(termLabel, gridBagConstraints);
 
         definitionTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        definitionTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        definitionTextField.setPreferredSize(new java.awt.Dimension(200, 30));
+        definitionTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        definitionTextField.setPreferredSize(new java.awt.Dimension(180, 30));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -67,17 +68,6 @@ public class TestJFrame extends javax.swing.JFrame {
         gridBagConstraints.ipady = 28;
         gridBagConstraints.insets = new java.awt.Insets(25, 0, 25, 0);
         getContentPane().add(definitionTextField, gridBagConstraints);
-
-        answerButton.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
-        answerButton.setText("Válasz");
-        answerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        answerButton.setFocusable(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.insets = new java.awt.Insets(25, 0, 25, 0);
-        getContentPane().add(answerButton, gridBagConstraints);
 
         quitButton.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
         quitButton.setForeground(new java.awt.Color(255, 0, 0));
@@ -95,11 +85,33 @@ public class TestJFrame extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.insets = new java.awt.Insets(150, 0, 0, 0);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(250, 25, 0, 0);
         getContentPane().add(quitButton, gridBagConstraints);
+
+        answerButton1.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
+        answerButton1.setText("Válasz");
+        answerButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        answerButton1.setFocusable(false);
+        answerButton1.setPreferredSize(new java.awt.Dimension(120, 53));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(25, 25, 25, 0);
+        getContentPane().add(answerButton1, gridBagConstraints);
+
+        jButton1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        jButton1.setText("Nem tudom");
+        jButton1.setPreferredSize(new java.awt.Dimension(120, 37));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 25, 25, 0);
+        getContentPane().add(jButton1, gridBagConstraints);
 
         setSize(new java.awt.Dimension(800, 800));
         setLocationRelativeTo(null);
@@ -161,8 +173,9 @@ public class TestJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton answerButton;
+    private javax.swing.JButton answerButton1;
     private javax.swing.JTextField definitionTextField;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton quitButton;
     private javax.swing.JLabel termLabel;
     // End of variables declaration//GEN-END:variables
