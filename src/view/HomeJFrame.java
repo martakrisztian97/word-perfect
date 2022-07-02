@@ -71,6 +71,10 @@ public class HomeJFrame extends javax.swing.JFrame {
         lw.setVisible(true);
     }
     
+    /**
+     * A wordsNumberSpinner értékének megfelelően véletlenszerűen kiválaszt szavakat a tesztfeladatsorhoz az összes szóból.
+     * @return A kiválogatott szavakat tartalmazó lista.
+     */
     public List<Word> selectWordsFromAll() {
         List<Word> selectedWordsList = new ArrayList<>();
         int wordsNumber = (int)this.wordsNumberSpinner.getValue();
