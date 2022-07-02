@@ -47,9 +47,9 @@ public class HomeJFrame extends javax.swing.JFrame {
      */
     public void wordNumberSpinnerSettings(){
         SpinnerModel spinnerModel = new SpinnerNumberModel(50, 20, 200, 10);
-        wordsNumberSpinner.setModel(spinnerModel);
-        if (wordsNumberSpinner.getEditor() instanceof JSpinner.DefaultEditor) {
-           JSpinner.DefaultEditor editor = (JSpinner.DefaultEditor) wordsNumberSpinner.getEditor();
+        this.wordsNumberSpinner.setModel(spinnerModel);
+        if (this.wordsNumberSpinner.getEditor() instanceof JSpinner.DefaultEditor) {
+           JSpinner.DefaultEditor editor = (JSpinner.DefaultEditor) this.wordsNumberSpinner.getEditor();
            editor.getTextField().setEditable(false);
            editor.getTextField().setHorizontalAlignment(JTextField.CENTER);
            editor.getTextField().setBackground(Color.WHITE);
@@ -61,8 +61,8 @@ public class HomeJFrame extends javax.swing.JFrame {
      */
     public void testStart() {
         dispose();
-        exercise = new Exercise((int)wordsNumberSpinner.getValue(), FileAction.fileReader("words.txt"));
-        LoadingWordsJFrame lw = new LoadingWordsJFrame(exercise);
+        this.exercise = new Exercise((int)this.wordsNumberSpinner.getValue(), FileAction.fileReader("words.txt"));
+        LoadingWordsJFrame lw = new LoadingWordsJFrame(this.exercise);
         lw.setVisible(true);
     }
 
@@ -235,7 +235,7 @@ public class HomeJFrame extends javax.swing.JFrame {
         Image image = toolkit.getImage(getClass().getResource("/view/images/uk_cursor.png"));
         Point p = new Point(0, 0);
         Cursor c = toolkit.createCustomCursor(image, p, "uk");
-        englishRadioButton.setCursor(c);
+        this.englishRadioButton.setCursor(c);
     }//GEN-LAST:event_englishRadioButtonMouseMoved
 
     /**
@@ -247,7 +247,7 @@ public class HomeJFrame extends javax.swing.JFrame {
         Image image = toolkit.getImage(getClass().getResource("/view/images/hu_cursor.png"));
         Point p = new Point(0, 0);
         Cursor c = toolkit.createCustomCursor(image, p, "hu");
-        hungarianRadioButton.setCursor(c);
+        this.hungarianRadioButton.setCursor(c);
     }//GEN-LAST:event_hungarianRadioButtonMouseMoved
 
     /**
@@ -259,7 +259,7 @@ public class HomeJFrame extends javax.swing.JFrame {
         Image image = toolkit.getImage(getClass().getResource("/view/images/quit_cursor.png"));
         Point p = new Point(0, 0);
         Cursor c = toolkit.createCustomCursor(image, p, "quit");
-        quitButton.setCursor(c);
+        this.quitButton.setCursor(c);
     }//GEN-LAST:event_quitButtonMouseMoved
 
     /**

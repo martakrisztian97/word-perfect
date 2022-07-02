@@ -32,7 +32,7 @@ public class LoadingWordsJFrame extends javax.swing.JFrame {
         initComponents();
         setJFrameBackground();
         startProgressBar();
-        test = new TestJFrame(e);
+        this.test = new TestJFrame(e);
     }
     
     /**
@@ -143,6 +143,6 @@ public class LoadingWordsJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel loadTextLabel;
-    public javax.swing.JProgressBar progressBar;
+    private javax.swing.JProgressBar progressBar;
     // End of variables declaration//GEN-END:variables
 }

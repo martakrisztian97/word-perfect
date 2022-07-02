@@ -145,7 +145,7 @@ public class TestJFrame extends javax.swing.JFrame {
         Image image = toolkit.getImage("src/view/images/quit_cursor.png");
         Point p = new Point(0, 0);
         Cursor c = toolkit.createCustomCursor(image, p, "quit");
-        quitButton.setCursor(c);
+        this.quitButton.setCursor(c);
     }//GEN-LAST:event_quitButtonMouseMoved
 
     /**
@@ -161,7 +161,7 @@ public class TestJFrame extends javax.swing.JFrame {
      * @param evt 
      */
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        definitionTextField.requestFocus();
+        this.definitionTextField.requestFocus();
     }//GEN-LAST:event_formWindowOpened
 
     /**
