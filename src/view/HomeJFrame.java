@@ -1,5 +1,6 @@
 package view;
 
+import controller.FileAction;
 import java.awt.Color;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
@@ -54,13 +55,13 @@ public class HomeJFrame extends javax.swing.JFrame {
            editor.getTextField().setBackground(Color.WHITE);
         }
     }
-    
+      
     /**
      * Teszt indítása
      */
     public void testStart() {
         dispose();
-        exercise = new Exercise(50);
+        exercise = new Exercise((int)wordsNumberSpinner.getValue(), FileAction.fileReader("words.txt"));
         LoadingWordsJFrame lw = new LoadingWordsJFrame(exercise);
         lw.setVisible(true);
     }
