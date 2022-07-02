@@ -77,12 +77,11 @@ public class HomeJFrame extends javax.swing.JFrame {
      */
     public List<Word> selectWordsFromAll() {
         List<Word> selectedWordsList = new ArrayList<>();
-        int wordsNumber = (int)this.wordsNumberSpinner.getValue();
         boolean contain;
-        for (int i = 1; i <= wordsNumber; i++) {
+        for (int i = 1; i <= (int)this.wordsNumberSpinner.getValue(); i++) {
             do {
                 contain = false;
-                int random = (int)(Math.random()*44);
+                int random = (int)(Math.random()*allWordsList.size());
                 Word selectedWord = this.allWordsList.get(random);
                 if (selectedWordsList.contains(selectedWord)) {
                     contain = true;
