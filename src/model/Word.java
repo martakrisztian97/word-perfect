@@ -22,4 +22,9 @@ public class Word {
     public String getHungarian() {
         return hungarian;
     }
+
+    @Override
+    public String toString() {
+        return "Word{" + "english=" + english + ", hungarian=" + hungarian + '}';
+    }
 }
