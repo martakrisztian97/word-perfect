@@ -12,9 +12,8 @@ public class Exercise {
     private int wordsNumber;
     private List<Word> wordsList;
 
-    public Exercise(int wordsNumber, List<Word> wordsList) {
+    public Exercise(int wordsNumber) {
         this.wordsNumber = wordsNumber;
-        this.wordsList = wordsList;
     }
 
     public int getWordsNumber() {
@@ -23,5 +22,9 @@ public class Exercise {
 
     public List<Word> getWordsList() {
         return wordsList;
+    }
+
+    public void setWordsList(List<Word> wordsList) {
+        this.wordsList = wordsList;
     }
 }
