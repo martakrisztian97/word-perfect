@@ -11,10 +11,12 @@ import java.util.List;
 public class Exercise {
     private int wordsNumber;
     private List<Word> wordsList;
+    private String termLanguage;
 
-    public Exercise(int wordsNumber, List<Word> wordsList) {
+    public Exercise(int wordsNumber, List<Word> wordsList, String termLanguage) {
         this.wordsNumber = wordsNumber;
         this.wordsList = wordsList;
+        this.termLanguage = termLanguage;
     }
 
     public int getWordsNumber() {
@@ -23,6 +25,10 @@ public class Exercise {
 
     public List<Word> getWordsList() {
         return wordsList;
+    }
+
+    public String getTermLanguage() {
+        return termLanguage;
     }
 
     public void setWordsList(List<Word> wordsList) {
