@@ -35,6 +35,8 @@ public class HomeJFrame extends javax.swing.JFrame {
         setJFrameBackground();
         wordNumberSpinnerSettings();
         this.allWordsList = FileAction.fileReader("words.txt");
+        this.englishRadioButton.setActionCommand("Angol");
+        this.hungarianRadioButton.setActionCommand("Magyar");
     }
     
     /**
@@ -66,7 +68,7 @@ public class HomeJFrame extends javax.swing.JFrame {
      */
     public void testStart() {
         dispose();
-        this.exercise = new Exercise((int)this.wordsNumberSpinner.getValue(), selectWordsFromAll());
+        this.exercise = new Exercise((int)this.wordsNumberSpinner.getValue(), selectWordsFromAll(), this.languageButtonGroup.getSelection().getActionCommand());
         LoadingWordsJFrame lw = new LoadingWordsJFrame(this.exercise);
         lw.setVisible(true);
     }
