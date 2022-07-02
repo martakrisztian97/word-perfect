@@ -3,6 +3,7 @@ package view;
 import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import model.Exercise;
 
 /**
  * Feladatsor betöltési képernyője
@@ -13,15 +14,25 @@ import java.awt.event.ActionListener;
 public class LoadingWordsJFrame extends javax.swing.JFrame {
 
     private Timer t;
-    private TestJFrame test = new TestJFrame();
+    private TestJFrame test;
     
     /**
      * Creates new form LoadingWords
      */
     public LoadingWordsJFrame() {
         initComponents();
+    }
+    
+    /**
+     * /**
+     * Creates new form LoadingWords
+     * @param e A HomeJFrame osztálytól kapott tesztfeladatsor
+     */
+    public LoadingWordsJFrame(Exercise e) {
+        initComponents();
         setJFrameBackground();
         startProgressBar();
+        test = new TestJFrame(e);
     }
     
     /**

@@ -4,6 +4,7 @@ import java.awt.Toolkit;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Cursor;
+import model.Exercise;
 
 /**
  * Tesztfeladatsor képernyője
@@ -12,13 +13,25 @@ import java.awt.Cursor;
  * @version 1.0
  */
 public class TestJFrame extends javax.swing.JFrame {
+    
+    private Exercise exercise;
 
     /**
      * Creates new form TestJFrame
      */
     public TestJFrame() {
         initComponents();
+    }
+    
+    /**
+     * /**
+     * Creates new form TestJFrame
+     * @param e A HomeJFrame majd a LoadingWordsJFrame osztálytól kapott tesztfeladatsor
+     */
+    public TestJFrame(Exercise e) {
+        initComponents();
         setJFrameBackground();
+        this.exercise = e;
     }
     
     /**
@@ -38,25 +51,21 @@ public class TestJFrame extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        termLabel = new javax.swing.JLabel();
         definitionTextField = new javax.swing.JTextField();
+        termLabel = new javax.swing.JLabel();
         quitButton = new javax.swing.JButton();
-        answerButton1 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        answerButton = new javax.swing.JButton();
+        dontKnowButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("WORD-PERFECT");
         setUndecorated(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new java.awt.GridBagLayout());
-
-        termLabel.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        termLabel.setText("Term");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(250, 0, 25, 0);
-        getContentPane().add(termLabel, gridBagConstraints);
 
         definitionTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         definitionTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -68,6 +77,15 @@ public class TestJFrame extends javax.swing.JFrame {
         gridBagConstraints.ipady = 28;
         gridBagConstraints.insets = new java.awt.Insets(25, 0, 25, 0);
         getContentPane().add(definitionTextField, gridBagConstraints);
+
+        termLabel.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        termLabel.setText("Term");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(250, 0, 25, 0);
+        getContentPane().add(termLabel, gridBagConstraints);
 
         quitButton.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
         quitButton.setForeground(new java.awt.Color(255, 0, 0));
@@ -91,27 +109,28 @@ public class TestJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(250, 25, 0, 0);
         getContentPane().add(quitButton, gridBagConstraints);
 
-        answerButton1.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
-        answerButton1.setText("Válasz");
-        answerButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        answerButton1.setFocusable(false);
-        answerButton1.setPreferredSize(new java.awt.Dimension(120, 53));
+        answerButton.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
+        answerButton.setText("Válasz");
+        answerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        answerButton.setFocusable(false);
+        answerButton.setPreferredSize(new java.awt.Dimension(120, 53));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(25, 25, 25, 0);
-        getContentPane().add(answerButton1, gridBagConstraints);
+        getContentPane().add(answerButton, gridBagConstraints);
 
-        jButton1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        jButton1.setText("Nem tudom");
-        jButton1.setPreferredSize(new java.awt.Dimension(120, 37));
+        dontKnowButton.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        dontKnowButton.setText("Nem tudom");
+        dontKnowButton.setFocusPainted(false);
+        dontKnowButton.setPreferredSize(new java.awt.Dimension(120, 37));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 25, 25, 0);
-        getContentPane().add(jButton1, gridBagConstraints);
+        getContentPane().add(dontKnowButton, gridBagConstraints);
 
         setSize(new java.awt.Dimension(800, 800));
         setLocationRelativeTo(null);
@@ -136,6 +155,14 @@ public class TestJFrame extends javax.swing.JFrame {
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_quitButtonActionPerformed
+
+    /**
+     * Amikor megnyilík az ablak, a beviteli mezőbe fókuszál a kurzor
+     * @param evt 
+     */
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        definitionTextField.requestFocus();
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -173,9 +200,9 @@ public class TestJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton answerButton1;
+    private javax.swing.JButton answerButton;
     private javax.swing.JTextField definitionTextField;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton dontKnowButton;
     private javax.swing.JButton quitButton;
     private javax.swing.JLabel termLabel;
     // End of variables declaration//GEN-END:variables

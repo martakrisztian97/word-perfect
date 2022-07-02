@@ -9,6 +9,7 @@ import java.awt.Toolkit;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Cursor;
+import model.Exercise;
 
 
 /**
@@ -18,6 +19,8 @@ import java.awt.Cursor;
  * @version 1.0
  */
 public class HomeJFrame extends javax.swing.JFrame {
+    
+    private Exercise exercise;
 
     /**
      * Creates new form Home
@@ -57,7 +60,8 @@ public class HomeJFrame extends javax.swing.JFrame {
      */
     public void testStart() {
         dispose();
-        LoadingWordsJFrame lw = new LoadingWordsJFrame();
+        exercise = new Exercise(50);
+        LoadingWordsJFrame lw = new LoadingWordsJFrame(exercise);
         lw.setVisible(true);
     }
 
