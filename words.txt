@@ -42,3 +42,286 @@ surpass;túlhalad, átlép
 uneasy;kellemetlen
 unnecessary;szükségtelen
 suspicious;gyanús, gyanakvó
+noun;főnév
+verb;ige, cselekvés
+adjective;melléknév
+direction;irány, irányzat
+location;elhelyezkedés
+ethnicity;etnikum
+alphabetical;ábécé szerinti
+order;rendel, sorrend
+bold;félkövér
+measurement;mérés, mérték
+singular;egyes szám
+plural;többes szám
+act;alakít, cselekszik
+gender;nem
+bridge;híd
+carry;visz, cipel
+ceiling;mennyezet
+cell phone;mobiltelefon
+circle;kör, karika
+clay;agyag
+clothing;ruházat
+consonant;mássalhangzó
+vowel;magánhangzó
+contract;szerződés
+cool;hűvös
+copper;réz
+corn;kukorica
+cereal;gabona
+corner;sarok
+count;számol
+court;bíróság
+cow;tehén
+crowd;tömeg
+cry;sír, kiabál
+curved;görbe, hajlított
+deaf;süket
+death;halál
+dead;halott
+deep;mély
+die;meghal
+dig;ásni
+disease;betegség, kór
+ill;beteg
+dot;pont, pötty
+down;le
+drug;kábítószer
+dry;száraz
+dust;por, leporol
+ear;fül
+edge;széle valaminek
+erection;felállítás
+engine;motor
+engineer;mérnök
+evening;este
+exercise;gyakorlás, feladat
+explode;felrobban
+fall (season);ősz
+fall (verb);esik
+famous;híres
+fan (electric);ventilátor
+fan;szurkoló
+farm;gazdaság
+feed;etet
+female;nő (nem)
+fifth;ötödik
+fight;küzdelem, harc
+flat;lapos, lakás
+floor;padló, emelet
+foot;láb, lábfej
+fork;villa, vasvilla
+forty;negyven (40)
+front;elülső
+gasoline;benzin
+grass;fű, legelő
+ground;föld, talaj
+grow;nő, növekszik
+hand;kéz
+hat;kalap, sapka
+head;fej
+hear;hall
+heart;szív
+heat;hő, hőség
+hill;domb, hegy
+heavy;nehéz
+hell;pokol
+high;magas
+heaven;mennyország
+hole;lyuk
+hour;óra (60 perc)
+human;emberi lény
+hundred;száz (100)
+husband;férj
+image;kép
+inch;hüvelyk
+injury;sérülés, sebesülés
+inside;belül, bent, belső
+instrument;eszköz, hangszer
+island;sziget
+it;ez, az
+kill;megöl
+knee;térd
+lake;tó
+lamp;lámpa
+laugh;nevet
+lawyer;ügyvéd
+library;könyvtár
+lie down;lefekszik
+lift;emel, felemel
+lip;ajak
+lock;zár, bezár
+lose;veszít
+loud;hangos, zajos
+low;alacsony
+lunch;ebéd
+male;férfi
+manager;menedzser
+map;térkép
+marriage;házasság
+marry;házasodik
+market;piac
+melt;olvad, olvaszt
+metal;fém
+mouse;egér
+mouth;száj
+movie;film, mozi
+murder;gyilkosság
+narrow;keskeny
+needle;varrótű
+neighbor;szomszéd
+network;hálózat
+north;észak
+note;jegyzet
+nuclear;nukleáris
+old;öreg, régi
+outside;kívül, kint, külső
+pain;fájdalom
+paint;fest, festék
+pants;alsónadrág
+patient;páciens, türelmes
+pattern;minta
+peace;béke
+person;személy
+plane;sík, repülőgép
+plant;növény
+plastic;műanyag
+player;játékos
+pocket;zseb
+poison;méreg
+pool;medence
+pork;disznóhús
+pound;angol font
+pray;imádkozik
+President;elnök
+price;ár (valaminek az ára)
+priest;pap
+prison;börtön
+pull;húz, húzás
+push;tol, tolás
+race;verseny, faj
+quiet;csendes
+quite;eléggé
+rain;eső, esik
+religion;vallás
+reporter;riporter, tudósító
+poor;szegény
+right;jobb, jobbra
+left;bal, balra
+ring;gyűrű, csörög
+roof;tető
+root;gyökér
+sand;homok
+science;tudomány
+screen;képernyő
+secretary;titkár, titkárnő
+seed;mag, vetőmag
+shake;ráz
+shallow;sekély
+ship;hajó, szállít
+shirt;ing
+shoot;lő
+sick;hányingere van, rosszul van, beteg
+side;oldal
+sign;aláír
+skin;bőr
+sky;ég, égbolt
+slow;lassú
+smell;szagol
+smile;mosoly, mosolyog
+soft;puha
+soil;talaj
+soldier;katona
+south;dél
+outer;külső
+overwhelm;túlterhelt, eláraszt
+unorganized;szervezetlen
+agenda;napirend, lista
+boundaries;határok
+stick;ragaszt
+schedule;ütemterv, menetrend, időbeosztás
+adhere;tapad, ragaszkodik
+deadline;határidő
+standing;álló
+spring;tavasz
+square;négyzet, négyszög
+stain;folt, pecsét
+stone;kő, (epe-vesekő)
+store;üzlet
+straight;egyenes
+taste;íz, ízlés, megkóstol
+tear;szakadás, könny
+temperature;hőmérséklet
+thick;vastag
+thin;vékony
+thousand;ezer (1000)
+throw;dob, dobás
+tight;szűk, szoros
+tire;gumiabroncs
+toe;lábujj
+tongue;nyelv
+tool;eszköz, szerszám
+tooth;fog
+top;tetejére, felső, csúcs
+touch;érintés, érint
+transportation;szállítás
+truck;teherautó, kamion
+turn;fordul
+ugly;csúnya
+university;egyetem
+up;fel
+valley;völgy
+victim;áldozat
+voice;hang
+wall;fal
+war;háború
+warm;meleg
+wash;mos, mosás
+wave;hullám
+weak;gyenge
+weight;súly
+west;nyugat
+wide;széles, tág
+wing;szárny, repülés
+wood;faanyag
+world;világ
+yard;udvar
+zero;nulla
+afternoon;délután
+morning;reggel, délelőtt
+alive;élő
+apartment;lakás
+beat;üt, ver
+beef;marhahús
+bend;hajlít
+beverage;ital, innivaló
+billion;milliárd
+billionaire;milliárdos
+bottom;alsó, alul
+dirty;piszkos
+election;választás (politikai)
+electric;elektromos
+practice;gyakorlás
+finger;ujj
+hang;lóg,akaszt
+author;szerző
+musical;zenés, zenés film
+musician;zenész
+leaf;falevél
+loose;kiold, meglazul, laza
+noise;zaj
+married;házas
+mean;gondol, jelent
+medicine;gyógyszer
+meter;mérőeszköz
+metre;méter
+mix;kever
+stir;kever
+robber;rabló
+robbery;rablás
+killer;gyilkos
+neighborhood;szomszédság
+note;jegyzet, hangjegy
+pass;elhalad, passzol
+plate;tányér
