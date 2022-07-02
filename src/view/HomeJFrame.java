@@ -10,7 +10,10 @@ import java.awt.Toolkit;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Cursor;
+import java.util.ArrayList;
+import java.util.List;
 import model.Exercise;
+import model.Word;
 
 
 /**
@@ -22,6 +25,7 @@ import model.Exercise;
 public class HomeJFrame extends javax.swing.JFrame {
     
     private Exercise exercise;
+    private List<Word> allWordsList;
 
     /**
      * Creates new form Home
@@ -30,6 +34,7 @@ public class HomeJFrame extends javax.swing.JFrame {
         initComponents();
         setJFrameBackground();
         wordNumberSpinnerSettings();
+        this.allWordsList = FileAction.fileReader("words.txt");
     }
     
     /**
@@ -61,9 +66,28 @@ public class HomeJFrame extends javax.swing.JFrame {
      */
     public void testStart() {
         dispose();
-        this.exercise = new Exercise((int)this.wordsNumberSpinner.getValue(), FileAction.fileReader("words.txt"));
+        this.exercise = new Exercise((int)this.wordsNumberSpinner.getValue(), selectWordsFromAll());
         LoadingWordsJFrame lw = new LoadingWordsJFrame(this.exercise);
         lw.setVisible(true);
+    }
+    
+    public List<Word> selectWordsFromAll() {
+        List<Word> selectedWordsList = new ArrayList<>();
+        int wordsNumber = (int)this.wordsNumberSpinner.getValue();
+        boolean contain;
+        for (int i = 1; i <= 10; i++) {
+            do {
+                contain = false;
+                int random = (int)(Math.random()*44);
+                Word selectedWord = this.allWordsList.get(random);
+                if (selectedWordsList.contains(selectedWord)) {
+                    contain = true;
+                } else {
+                    selectedWordsList.add(selectedWord);
+                }
+            } while (contain);
+        }
+        return selectedWordsList;
     }
 
     /**
