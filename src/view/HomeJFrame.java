@@ -75,7 +75,7 @@ public class HomeJFrame extends javax.swing.JFrame {
         List<Word> selectedWordsList = new ArrayList<>();
         int wordsNumber = (int)this.wordsNumberSpinner.getValue();
         boolean contain;
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= wordsNumber; i++) {
             do {
                 contain = false;
                 int random = (int)(Math.random()*44);
