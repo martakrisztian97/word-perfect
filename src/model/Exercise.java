@@ -10,28 +10,24 @@ import java.util.List;
  */
 public class Exercise {
     private int wordsNumber;
-    private List<Word> wordsList;
-    private String termLanguage;
+    private List<String> termsList;
+    private List<String> definitionsList;
 
-    public Exercise(int wordsNumber, List<Word> wordsList, String termLanguage) {
+    public Exercise(int wordsNumber, List<String> termsList, List<String> definitionsList) {
         this.wordsNumber = wordsNumber;
-        this.wordsList = wordsList;
-        this.termLanguage = termLanguage;
+        this.termsList = termsList;
+        this.definitionsList = definitionsList;
     }
 
     public int getWordsNumber() {
         return wordsNumber;
     }
 
-    public List<Word> getWordsList() {
-        return wordsList;
+    public List<String> getTermsList() {
+        return termsList;
     }
 
-    public String getTermLanguage() {
-        return termLanguage;
-    }
-
-    public void setWordsList(List<Word> wordsList) {
-        this.wordsList = wordsList;
+    public List<String> getDefinitionsList() {
+        return definitionsList;
     }
 }

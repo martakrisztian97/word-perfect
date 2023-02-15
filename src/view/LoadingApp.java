@@ -14,7 +14,7 @@ public class LoadingApp {
         HomeJFrame h = new HomeJFrame();
         try {
             for (int i = 0; i <= 100; i++) {
-                Thread.sleep(40);
+                Thread.sleep(10);
                 s.percentLabel.setText(Integer.toString(i)+"%");
                 if (i == 50) s.loadTextLabel.setText("Magyar szavak betöltése...");
                 if (i == 100) {

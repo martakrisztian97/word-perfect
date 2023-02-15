@@ -61,7 +61,7 @@ public class LoadingWordsJFrame extends javax.swing.JFrame {
                 }
             }
         };
-        t = new Timer(20, al);
+        t = new Timer(10, al);
         t.start();
     }
 

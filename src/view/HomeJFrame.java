@@ -26,6 +26,8 @@ public class HomeJFrame extends javax.swing.JFrame {
     
     private Exercise exercise;
     private List<Word> allWordsList;
+    private List<String> termsList;
+    private List<String> definitionsList;
 
     /**
      * Creates new form Home
@@ -35,8 +37,10 @@ public class HomeJFrame extends javax.swing.JFrame {
         setJFrameBackground();
         wordNumberSpinnerSettings();
         this.allWordsList = FileAction.fileReader("words.txt");
-        this.englishRadioButton.setActionCommand("Angol");
-        this.hungarianRadioButton.setActionCommand("Magyar");
+        this.englishRadioButton.setActionCommand("English");
+        this.hungarianRadioButton.setActionCommand("Hungarian");
+        termsList = new ArrayList<>();
+        definitionsList = new ArrayList<>();
     }
     
     /**
@@ -53,7 +57,7 @@ public class HomeJFrame extends javax.swing.JFrame {
      * - Spinner Model beállítása
      */
     public void wordNumberSpinnerSettings(){
-        SpinnerModel spinnerModel = new SpinnerNumberModel(50, 20, 200, 10);
+        SpinnerModel spinnerModel = new SpinnerNumberModel(50, 10 /*todo*/, 200, 10);
         this.wordsNumberSpinner.setModel(spinnerModel);
         if (this.wordsNumberSpinner.getEditor() instanceof JSpinner.DefaultEditor) {
            JSpinner.DefaultEditor editor = (JSpinner.DefaultEditor) this.wordsNumberSpinner.getEditor();
@@ -68,7 +72,8 @@ public class HomeJFrame extends javax.swing.JFrame {
      */
     public void testStart() {
         dispose();
-        this.exercise = new Exercise((int)this.wordsNumberSpinner.getValue(), selectWordsFromAll(), this.languageButtonGroup.getSelection().getActionCommand());
+        selectWordsFromAll();
+        this.exercise = new Exercise((int)this.wordsNumberSpinner.getValue(), termsList, definitionsList);
         LoadingWordsJFrame lw = new LoadingWordsJFrame(this.exercise);
         lw.setVisible(true);
     }
@@ -77,22 +82,27 @@ public class HomeJFrame extends javax.swing.JFrame {
      * A wordsNumberSpinner értékének megfelelően véletlenszerűen kiválaszt szavakat a tesztfeladatsorhoz az összes szóból.
      * @return A kiválogatott szavakat tartalmazó lista.
      */
-    public List<Word> selectWordsFromAll() {
-        List<Word> selectedWordsList = new ArrayList<>();
+    public void selectWordsFromAll() {
+        String termLanguage = this.languageButtonGroup.getSelection().getActionCommand();
         boolean contain;
         for (int i = 1; i <= (int)this.wordsNumberSpinner.getValue(); i++) {
             do {
                 contain = false;
                 int random = (int)(Math.random()*allWordsList.size());
                 Word selectedWord = this.allWordsList.get(random);
-                if (selectedWordsList.contains(selectedWord)) {
+                if (termsList.contains(selectedWord.getEnglish()) || definitionsList.contains(selectedWord.getEnglish())) {
                     contain = true;
                 } else {
-                    selectedWordsList.add(selectedWord);
+                    if (termLanguage.equals("English")) {
+                        termsList.add(selectedWord.getEnglish());
+                        definitionsList.add(selectedWord.getHungarian());
+                    } else if (termLanguage.equals("Hungarian")) {
+                        termsList.add(selectedWord.getHungarian());
+                        definitionsList.add(selectedWord.getEnglish());
+                    }
                 }
             } while (contain);
         }
-        return selectedWordsList;
     }
 
     /**

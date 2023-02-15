@@ -4,6 +4,9 @@ import java.awt.Toolkit;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Cursor;
+import java.awt.event.KeyEvent;
+import java.util.HashSet;
+import javax.swing.JOptionPane;
 import model.Exercise;
 
 /**
@@ -15,6 +18,7 @@ import model.Exercise;
 public class TestJFrame extends javax.swing.JFrame {
     
     private Exercise exercise;
+    private int n;
 
     /**
      * Creates new form TestJFrame
@@ -31,7 +35,12 @@ public class TestJFrame extends javax.swing.JFrame {
     public TestJFrame(Exercise e) {
         initComponents();
         setJFrameBackground();
-        this.exercise = e;
+        exercise = e;
+        n = 0;
+        continueButton.setVisible(false);
+        goodAnswerLabel.setVisible(false);
+        continueButton.setVisible(false);
+        iWasCorrectButton.setVisible(false);
     }
     
     /**
@@ -39,6 +48,38 @@ public class TestJFrame extends javax.swing.JFrame {
      */
     public void setJFrameBackground() {
         getContentPane().setBackground(new java.awt.Color(177, 184, 252));
+    }
+    
+    public void testing() {
+        if (definitionTextField.getText().equals(exercise.getDefinitionsList().get(n))) {
+            System.out.println("Helyes válasz: "+exercise.getDefinitionsList().get(n));
+            definitionTextField.setText("");
+            if (n < exercise.getWordsNumber()-1) {
+                n++;
+                termLabel.setText(exercise.getTermsList().get(n));
+            } else {
+                result();
+            }
+        } else {
+            System.out.println("Helytelen válasz: "+exercise.getDefinitionsList().get(n));
+            definitionTextField.setText("");
+            continueButton.setVisible(true);
+            goodAnswerLabel.setText(exercise.getDefinitionsList().get(n));
+            goodAnswerLabel.setVisible(true);
+            answerButton.setVisible(false);
+            dontKnowButton.setVisible(false);
+            iWasCorrectButton.setVisible(true);
+        }
+    }
+    
+    /**
+     * Teszt végeredményének megállapítása és megjelenítése.
+     */
+    public void result () {
+        JOptionPane.showMessageDialog(null, "Teszt vége!", "Eredményed:", JOptionPane.INFORMATION_MESSAGE);
+        continueButton.setVisible(false);
+        iWasCorrectButton.setVisible(false);
+        goodAnswerLabel.setText("");
     }
 
     /**
@@ -56,6 +97,9 @@ public class TestJFrame extends javax.swing.JFrame {
         quitButton = new javax.swing.JButton();
         answerButton = new javax.swing.JButton();
         dontKnowButton = new javax.swing.JButton();
+        goodAnswerLabel = new javax.swing.JLabel();
+        continueButton = new javax.swing.JButton();
+        iWasCorrectButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("WORD-PERFECT");
@@ -70,6 +114,11 @@ public class TestJFrame extends javax.swing.JFrame {
         definitionTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         definitionTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         definitionTextField.setPreferredSize(new java.awt.Dimension(180, 30));
+        definitionTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                definitionTextFieldKeyPressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -78,7 +127,7 @@ public class TestJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(25, 0, 25, 0);
         getContentPane().add(definitionTextField, gridBagConstraints);
 
-        termLabel.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        termLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         termLabel.setText("Term");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -114,11 +163,16 @@ public class TestJFrame extends javax.swing.JFrame {
         answerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         answerButton.setFocusable(false);
         answerButton.setPreferredSize(new java.awt.Dimension(120, 53));
+        answerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                answerButtonActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(25, 25, 25, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
         getContentPane().add(answerButton, gridBagConstraints);
 
         dontKnowButton.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
@@ -129,8 +183,48 @@ public class TestJFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 25, 25, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
         getContentPane().add(dontKnowButton, gridBagConstraints);
+
+        goodAnswerLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        goodAnswerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        goodAnswerLabel.setText("Jó válasz");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        getContentPane().add(goodAnswerLabel, gridBagConstraints);
+
+        continueButton.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        continueButton.setText("Tovább");
+        continueButton.setFocusPainted(false);
+        continueButton.setPreferredSize(new java.awt.Dimension(120, 37));
+        continueButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                continueButtonActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.insets = new java.awt.Insets(25, 0, 0, 0);
+        getContentPane().add(continueButton, gridBagConstraints);
+
+        iWasCorrectButton.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        iWasCorrectButton.setText("Helyes volt");
+        iWasCorrectButton.setFocusPainted(false);
+        iWasCorrectButton.setPreferredSize(new java.awt.Dimension(120, 37));
+        iWasCorrectButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                iWasCorrectButtonActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
+        getContentPane().add(iWasCorrectButton, gridBagConstraints);
 
         setSize(new java.awt.Dimension(800, 800));
         setLocationRelativeTo(null);
@@ -145,7 +239,7 @@ public class TestJFrame extends javax.swing.JFrame {
         Image image = toolkit.getImage("src/view/images/quit_cursor.png");
         Point p = new Point(0, 0);
         Cursor c = toolkit.createCustomCursor(image, p, "quit");
-        this.quitButton.setCursor(c);
+        quitButton.setCursor(c);
     }//GEN-LAST:event_quitButtonMouseMoved
 
     /**
@@ -161,8 +255,47 @@ public class TestJFrame extends javax.swing.JFrame {
      * @param evt 
      */
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        this.definitionTextField.requestFocus();
+        definitionTextField.requestFocus();
+        termLabel.setText(exercise.getTermsList().get(0));
     }//GEN-LAST:event_formWindowOpened
+
+    private void answerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerButtonActionPerformed
+        testing();
+    }//GEN-LAST:event_answerButtonActionPerformed
+
+    private void definitionTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_definitionTextFieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            testing();
+        }
+    }//GEN-LAST:event_definitionTextFieldKeyPressed
+
+    private void continueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueButtonActionPerformed
+        continueButton.setVisible(false);
+        iWasCorrectButton.setVisible(false);
+        answerButton.setVisible(true);
+        dontKnowButton.setVisible(true);
+        goodAnswerLabel.setText("");
+        if (n < exercise.getWordsNumber()-1) {
+            n++;
+            termLabel.setText(exercise.getTermsList().get(n));
+        } else {
+            result();
+        }
+    }//GEN-LAST:event_continueButtonActionPerformed
+
+    private void iWasCorrectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iWasCorrectButtonActionPerformed
+        iWasCorrectButton.setVisible(false);
+        continueButton.setVisible(false);
+        answerButton.setVisible(true);
+        dontKnowButton.setVisible(true);
+        goodAnswerLabel.setText("");
+        if (n < exercise.getWordsNumber()-1) {
+            n++;
+            termLabel.setText(exercise.getTermsList().get(n));   
+        } else {
+            result();
+        }
+    }//GEN-LAST:event_iWasCorrectButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,8 +334,11 @@ public class TestJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton answerButton;
+    private javax.swing.JButton continueButton;
     private javax.swing.JTextField definitionTextField;
     private javax.swing.JButton dontKnowButton;
+    private javax.swing.JLabel goodAnswerLabel;
+    private javax.swing.JButton iWasCorrectButton;
     private javax.swing.JButton quitButton;
     private javax.swing.JLabel termLabel;
     // End of variables declaration//GEN-END:variables
